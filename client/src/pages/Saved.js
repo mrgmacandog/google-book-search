@@ -1,9 +1,11 @@
 import React from "react";
+import BookContainer from "../components/BookContainer";
 
 function Saved() {
     return (
-        <div>
-            Saved
+        <div className="container">
+            <h2>Saved Books</h2>
+            <BookContainer />
         </div>
     );
 }

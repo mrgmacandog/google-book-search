@@ -1,9 +1,11 @@
 import React from "react";
+import BookContainer from "../components/BookContainer";
 
 function Search() {
     return (
-        <div>
-            Search
+        <div className="container">
+            <h2>Results</h2>
+            <BookContainer />
         </div>
     );
 }
