@@ -11,7 +11,7 @@ function BookItem() {
                 <div className="card-stacked">
                     <div className="card-content">
                         <h3>Book Title</h3>
-                        <h4>Author(s)</h4>
+                        <p>Author(s)</p>
                         <p>Description</p>
                     </div>
                     <div className="card-action">
