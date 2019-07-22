@@ -1,15 +1,15 @@
 import React from "react";
 
-function BookSearch() {
+function BookSearch(props) {
     return (
         <div className="row">
             <form className="col s12">
                 <div className="row">
                     <div className="input-field col s12">
                         <i className="material-icons prefix">book</i>
-                        <input id="icon_prefix" type="text" className="validate" />
+                        <input id="icon_prefix" type="text" className="validate" onChange={props.handleInputChange} />
                         <label for="icon_prefix">Book Title</label>
-                    <button className="btn waves-effect waves-light right" type="submit" name="action">Search</button>
+                    <button className="btn waves-effect waves-light right" type="submit" name="action" onClick={props.handleFormSubmit}>Search</button>
                     </div>
                 </div>
             </form>

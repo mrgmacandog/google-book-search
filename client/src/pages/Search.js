@@ -15,6 +15,7 @@ class Search extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
+        console.log(this.state.search);
         API.getBooksByTitle(this.state.search)
             .then(res => {
                 console.log(res);
@@ -25,7 +26,10 @@ class Search extends Component {
     render() {
         return (
             <div className="container">
-                <BookSearch/>
+                <BookSearch
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                />
     
                 <h2>Results</h2>
                 <BookContainer />
