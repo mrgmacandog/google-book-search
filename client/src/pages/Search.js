@@ -1,16 +1,37 @@
-import React from "react";
+import React, { Component } from "react";
+import API from "../util/API";
 import BookSearch from "../components/BookSearch";
 import BookContainer from "../components/BookContainer";
 
-function Search() {
-    return (
-        <div className="container">
-            <BookSearch/>
+class Search extends Component {
+    state = {
+        search: "",
+        results: []
+    };
 
-            <h2>Results</h2>
-            <BookContainer />
-        </div>
-    );
+    handleInputChange = event => {
+        this.setState({ search: event.target.value })
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        API.getBooksByTitle(this.state.search)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <BookSearch/>
+    
+                <h2>Results</h2>
+                <BookContainer />
+            </div>
+        );
+    }
 }
 
 export default Search;
