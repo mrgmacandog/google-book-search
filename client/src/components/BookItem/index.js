@@ -10,7 +10,9 @@ function BookItem() {
                 </div>
                 <div className="card-stacked">
                     <div className="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        <h3>Book Title</h3>
+                        <h4>Author(s)</h4>
+                        <p>Description</p>
                     </div>
                     <div className="card-action">
                         <BookButtons />
