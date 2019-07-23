@@ -17,6 +17,7 @@ class Search extends Component {
         event.preventDefault();
         API.getBooksByTitle(this.state.search)
             .then(res => {
+                // TODO: Delete console.log
                 console.log(res.data.items);
                 this.setState({ results: res.data.items });
             })
@@ -30,6 +31,7 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
+                <h2>Results</h2>
                 <BookContainer
                     page="Search"
                     results={this.state.results}
