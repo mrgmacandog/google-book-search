@@ -30,8 +30,8 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-                <h2>Results</h2>
                 <BookContainer
+                    page="Search"
                     results={this.state.results}
                 />
             </div>

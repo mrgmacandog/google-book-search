@@ -15,7 +15,10 @@ function BookItem(props) {
                         <p>{props.description}</p>
                     </div>
                     <div className="card-action">
-                        <BookButtons link={props.link}/>
+                        <BookButtons
+                            link={props.link}
+                            page={props.page}
+                        />
                     </div>
                 </div>
             </div>
