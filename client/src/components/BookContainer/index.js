@@ -13,6 +13,7 @@ function BookContainer(props) {
                         ? (props.results.map(book => (
                             <BookItem
                                 page={props.page}
+                                addBook={props.addBook}
                                 key={book.id}
                                 id={book.id}
                                 image={book.volumeInfo.imageLinks.thumbnail}

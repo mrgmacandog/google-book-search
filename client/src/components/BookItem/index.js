@@ -16,7 +16,6 @@ function BookItem(props) {
                     </div>
                     <div className="card-action">
                         <BookButtons
-                            page={props.page}
                             {...props}
                         />
                     </div>

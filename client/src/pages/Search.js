@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../util/API";
 import BookSearch from "../components/BookSearch";
 import BookContainer from "../components/BookContainer";
+import axios from "axios";
 
 class Search extends Component {
     state = {
@@ -16,12 +17,20 @@ class Search extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         API.getBooksByTitle(this.state.search)
-            .then(res => {
-                // TODO: Delete console.log
-                console.log(res.data.items);
-                this.setState({ results: res.data.items });
-            })
+            .then(res => this.setState({ results: res.data.items }))
             .catch(err => console.log(err));
+    }
+
+    addBook = props => {
+        axios.post("/api/books", {
+            title: props.title,
+            authors: props.authors,
+            description: props.description,
+            image: props.image,
+            link: props.link
+        })
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
     }
 
     render() {
@@ -35,6 +44,7 @@ class Search extends Component {
                 <BookContainer
                     page="Search"
                     results={this.state.results}
+                    addBook={this.addBook}
                 />
             </div>
         );

@@ -12,7 +12,6 @@ class Saved extends Component {
     }
 
     deleteBook = id => {
-        console.log(this);
         axios.delete(`/api/books/${id}`)
             .then(response => this.loadBooks())
             .catch(err => console.log(err));
