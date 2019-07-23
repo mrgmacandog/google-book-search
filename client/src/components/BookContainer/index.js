@@ -1,13 +1,18 @@
 import React from "react";
 import BookItem from "../BookItem";
 
-function BookContainer() {
+function BookContainer(props) {
     return (
         <React.Fragment>
-            <BookItem />
-            <BookItem />
-            <BookItem />
-            <BookItem />
+            {props.results.map(book => (
+                <BookItem
+                    key={book.id}
+                    id={book.id}
+                    title={book.volumeInfo.title}
+                    authors={book.volumeInfo.authors}
+                    description={book.volumeInfo.description}
+                />
+            ))}
         </React.Fragment>
     );
 }

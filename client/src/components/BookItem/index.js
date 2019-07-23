@@ -1,7 +1,7 @@
 import React from "react";
 import BookButtons from "../BookButtons";
 
-function BookItem() {
+function BookItem(props) {
     return (
         <div className="col s12 m7">
             <div className="card horizontal">
@@ -10,9 +10,9 @@ function BookItem() {
                 </div>
                 <div className="card-stacked">
                     <div className="card-content">
-                        <h3>Book Title</h3>
-                        <p>Author(s)</p>
-                        <p>Description</p>
+                        <h3>{props.title}</h3>
+                        <p>{props.authors}</p>
+                        <p>{props.description}</p>
                     </div>
                     <div className="card-action">
                         <BookButtons />

@@ -15,10 +15,10 @@ class Search extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state.search);
         API.getBooksByTitle(this.state.search)
             .then(res => {
-                console.log(res);
+                console.log(res.data.items);
+                this.setState({ results: res.data.items });
             })
             .catch(err => console.log(err));
     }
@@ -30,9 +30,10 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-    
                 <h2>Results</h2>
-                <BookContainer />
+                <BookContainer
+                    results={this.state.results}
+                />
             </div>
         );
     }
