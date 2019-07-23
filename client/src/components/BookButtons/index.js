@@ -8,18 +8,16 @@ function handleSaveButton(props) {
         description: props.description,
         image: props.image,
         link: props.link
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    })
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
 }
 
-function handleDeleteButton() {
-    
-}
+// function handleDeleteButton(props) {
+//     axios.delete(`/api/books/${props._id}`)
+//     .then(response => props.loadBooks())
+//     .catch(err => console.log(err));
+// }
 
 function BookButtons(props) {
     return (
@@ -28,7 +26,7 @@ function BookButtons(props) {
             {/* Second button will depend on page */}
             {props.page === "Search"
                 ? <button className="waves-effect waves-light btn" onClick={() => handleSaveButton(props)}><i className="material-icons left">save</i>save</button>
-                : <button className="waves-effect waves-light btn" onClick={() => handleDeleteButton(props)}><i className="material-icons left">delete</i>delete</button>}
+                : <button className="waves-effect waves-light btn" onClick={() => props.deleteBook(props._id)}><i className="material-icons left">delete</i>delete</button>}
         </React.Fragment>
     );
 }

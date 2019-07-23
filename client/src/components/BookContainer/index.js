@@ -26,8 +26,9 @@ function BookContainer(props) {
                         : (props.results.map(book => (
                             <BookItem
                                 page={props.page}
-                                key={book.id}
-                                id={book.id}
+                                deleteBook={props.deleteBook}
+                                key={book._id}
+                                _id={book._id}
                                 image={book.image}
                                 title={book.title}
                                 authors={book.authors}

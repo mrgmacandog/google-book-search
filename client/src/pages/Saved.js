@@ -8,6 +8,17 @@ class Saved extends Component {
     }
 
     componentDidMount() {
+        this.loadBooks();
+    }
+
+    deleteBook = id => {
+        console.log(this);
+        axios.delete(`/api/books/${id}`)
+            .then(response => this.loadBooks())
+            .catch(err => console.log(err));
+    }
+    
+    loadBooks = () => {
         axios.get("/api/books")
             .then(results => {
                 // TODO: Delete this console.log
@@ -24,6 +35,7 @@ class Saved extends Component {
                 <BookContainer
                     page="Saved"
                     results={this.state.results}
+                    deleteBook={this.deleteBook}
                 />
             </div>
         );
