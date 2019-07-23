@@ -6,7 +6,7 @@ function BookItem(props) {
         <div className="col s12 m7">
             <div className="card horizontal">
                 <div className="card-image">
-                    <img src="https://lorempixel.com/100/190/nature/6" />
+                    <img src={props.image} alt={props.title} />
                 </div>
                 <div className="card-stacked">
                     <div className="card-content">
@@ -15,7 +15,7 @@ function BookItem(props) {
                         <p>{props.description}</p>
                     </div>
                     <div className="card-action">
-                        <BookButtons />
+                        <BookButtons link={props.link}/>
                     </div>
                 </div>
             </div>
