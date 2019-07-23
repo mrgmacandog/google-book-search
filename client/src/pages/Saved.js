@@ -7,23 +7,21 @@ class Saved extends Component {
         results: []
     }
 
+    // When the component is mounted, load the books
     componentDidMount() {
         this.loadBooks();
     }
 
     deleteBook = id => {
         axios.delete(`/api/books/${id}`)
-            .then(response => this.loadBooks())
+            // Wait 300 ms before loading the books
+            .then(response => setTimeout(this.loadBooks, 300))
             .catch(err => console.log(err));
     }
     
     loadBooks = () => {
         axios.get("/api/books")
-            .then(results => {
-                // TODO: Delete this console.log
-                console.log(results);
-                this.setState({ results: results.data });
-            })
+            .then(results => this.setState({ results: results.data }))
             .catch(err => console.log(err))
     }
 

@@ -8,7 +8,7 @@ function BookSearch(props) {
                     <div className="input-field col s12">
                         <i className="material-icons prefix">book</i>
                         <input id="icon_prefix" type="text" className="validate" onChange={props.handleInputChange} />
-                        <label for="icon_prefix">Book Title</label>
+                        <label htmlFor="icon_prefix">Book Title</label>
                     <button className="btn waves-effect waves-light right" type="submit" name="action" onClick={props.handleFormSubmit}>Search</button>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ function Navbar() {
                     <div className="container">
                         <a href="/" className="brand-logo">Google Books</a>
                         <ul id="nav-mobile" className="right">
+                            {/* TODO: Make links active according to the page */}
                             <li><Link to="/search">Search</Link></li>
                             <li><Link to="/saved">Saved</Link></li>
                         </ul>
