@@ -3,7 +3,7 @@ import React from "react";
 function BookButtons(props) {
     return (
         <React.Fragment>
-            {/* FIXME: Link doesn't work on Saved page */}
+            {/* First button takes to Google Book page for the book */}
             <a className="waves-effect waves-light btn" target="_blank" rel="noopener noreferrer" href={props.link}><i className="material-icons left">remove_red_eye</i>view</a>
             {/* Second button will depend on page */}
             {props.page === "Search"

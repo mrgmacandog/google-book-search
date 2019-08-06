@@ -16,9 +16,13 @@ class Search extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        API.getBooksByTitle(this.state.search)
-            .then(res => this.setState({ results: res.data.items }))
-            .catch(err => console.log(err));
+
+        // If there is something in the search box
+        if (this.state.search !== "") {
+            API.getBooksByTitle(this.state.search)
+                .then(res => this.setState({ results: res.data.items }))
+                .catch(err => console.log(err));
+        }
     }
 
     addBook = props => {

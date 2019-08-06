@@ -10,7 +10,6 @@ function BookContainer(props) {
                     // Check which page component state
                     ? (props.page === "Search"
                         // Map over the results of the search
-                        // FIXME: Error when search is empty or "Pendragon"
                         ? (props.results.map(book => (
                             <BookItem
                                 page={props.page}
@@ -35,7 +34,7 @@ function BookContainer(props) {
                                 title={book.title}
                                 authors={book.authors}
                                 description={book.description}
-                                link={book.infoLink}
+                                link={book.link}
                             />
                         )))
                     )
