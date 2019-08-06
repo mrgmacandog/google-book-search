@@ -1,10 +1,11 @@
 import React from "react";
+import "./style.css";
 
 function BookButtons(props) {
     return (
         <React.Fragment>
             {/* First button takes to Google Book page for the book */}
-            <a className="waves-effect waves-light btn" target="_blank" rel="noopener noreferrer" href={props.link}><i className="material-icons left">remove_red_eye</i>view</a>
+            <a id="view-btn" className="waves-effect waves-light btn" target="_blank" rel="noopener noreferrer" href={props.link}><i className="material-icons left">remove_red_eye</i>view</a>
             {/* Second button will depend on page */}
             {props.page === "Search"
                 ? <button className="waves-effect waves-light blue btn" onClick={() => props.addBook(props)}><i className="material-icons left">save</i>save</button>

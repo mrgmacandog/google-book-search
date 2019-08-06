@@ -1,5 +1,6 @@
 import React from "react";
 import BookButtons from "../BookButtons";
+import "./style.css";
 
 function BookItem(props) {
     return (
